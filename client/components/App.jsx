@@ -1,34 +1,30 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
+
+import {Routes, Route } from "react-router-dom"
 // import { getGreeting } from '../apiClient'
 import Cards from './Cards'
+import Card from "./Card"
 import Recipe from './Recipe'
-import WeeksRecipes from './WeeksRecipes'
+
+
 
 const App = () => {
-  // const [greeting, setGreeting] = useState('')
-  // const [count, setCount] = useState(0)
-  // const [isError, setIsError] = useState(false)
 
-  // useEffect(() => {
-  //   getGreeting()
-  //     .then((greeting) => {
-  //       console.log(greeting)
-  //       setGreeting(greeting)
-  //       setIsError(false)
-  //       return null
-  //     })
-  //     .catch((err) => {
-  //       console.log(err)
-  //       setIsError(true)
-  //     })
-  // }, [count])
+ 
 
   return (
 
   <>
-    {/* <Cards/> */}
+   <Routes>
+        <Route path='/' element={<Cards/>} />
+          <Route path='/continents/:continent' element={<Continent/>}/>
+          <Route path="/continents/:continent/:name/:code" element={<Country/>}/>
+        </Routes>
+ {/* <Cards/> */}
+
+   
     {/* <Recipe/> */}
-    <WeeksRecipes/>
+    {/* <WeeksRecipes/> */}
 </>
 
 )

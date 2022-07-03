@@ -9,7 +9,7 @@ export default function WeeksRecipes() {
 
 
 <div className="container fluid -md-8">
-      <h1>Recipes</h1>
+      <h1>Recipe</h1>
         <div className="row">
             <div className="col-10">
             <Recipe/>

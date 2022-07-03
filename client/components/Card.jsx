@@ -1,19 +1,41 @@
-import React from "react"
+import React, { useState, useEffect } from 'react'
+import { allRecipes } from '../apiClient'
 
 
 export default function Card(){
 
+
+  const [recipes, setRecipes] = useState([])
+
+  useEffect(() => {
+    allRecipes()
+      .then(recipeData => {
+        console.log("this is recipe data", recipeData)
+        setRecipes(recipeData)
+        return null
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }, [])
+
+ 
   return(
     <>
-
-  <div className="card">
-  <img src="https://picsum.photos/300/200" className="card-img-top" alt="..."/>
-  <div className="card-body">
-  <h5 className="card-title">Card title</h5>
-  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  <a href="#" className="btn btn-primary">Go somewhere</a>
+{recipes.map((recipe) => (
+  <div key={recipe.id} className='col'>
+    <div  className="card h-100">
+    <img src={recipe.imageUrl} className="card-img-top img-fluid" alt="..."/>
+    <div className="card-body align-bottom d-flex flex-column">
+    <h5 className="card-title">{recipe.title}</h5>
+    <p className="card-text">{recipe.summary}</p>
+    {/* <div className="card-footer text-muted mx-auto"> */}
+    <div className=" mt-auto align-self-end btn btn-primary align-self-end">Go to recipe</div>
+    </div>
+    </div>
   </div>
-</div>
+  ))}
+
 </>
   )
 

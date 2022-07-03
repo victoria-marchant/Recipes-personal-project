@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { allRecipes } from '../apiClient'
+import {Link} from "react-router-dom"
 
 
 export default function Card(){
@@ -10,7 +11,7 @@ export default function Card(){
   useEffect(() => {
     allRecipes()
       .then(recipeData => {
-        console.log("this is recipe data", recipeData)
+        // console.log("this is recipe data", recipeData)
         setRecipes(recipeData)
         return null
       })
@@ -30,7 +31,7 @@ export default function Card(){
     <h5 className="card-title">{recipe.title}</h5>
     <p className="card-text">{recipe.summary}</p>
     {/* <div className="card-footer text-muted mx-auto"> */}
-    <div className=" mt-auto align-self-end btn btn-primary align-self-end">Go to recipe</div>
+    <Link className=" mt-auto align-self-end btn btn-primary align-self-end" to={`/${recipe.id}/`} >Go to recipe</Link>
     </div>
     </div>
   </div>
@@ -40,3 +41,4 @@ export default function Card(){
   )
 
 }
+

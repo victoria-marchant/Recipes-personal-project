@@ -3,8 +3,8 @@ import React from 'react'
 import {Routes, Route } from "react-router-dom"
 // import { getGreeting } from '../apiClient'
 import Cards from './Cards'
-import Card from "./Card"
 import Recipe from './Recipe'
+import WeeksRecipes from "./WeeksRecipes"
 
 
 
@@ -17,8 +17,8 @@ const App = () => {
   <>
    <Routes>
         <Route path='/' element={<Cards/>} />
-          <Route path='/continents/:continent' element={<Continent/>}/>
-          <Route path="/continents/:continent/:name/:code" element={<Country/>}/>
+          <Route path='/:recipeId' element={<Recipe/>}/>
+          <Route path="/weeksrecipes" element={<WeeksRecipes/>}/>
         </Routes>
  {/* <Cards/> */}
 

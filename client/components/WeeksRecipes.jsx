@@ -1,6 +1,6 @@
 import React from "react"
-import Recipe from "./Recipe"
-import Card from "./Card"
+import RecipePlaceholder from "./RecipePlaceholder"
+import CardPlaceholder from "./CardPlaceholder"
 
 export default function WeeksRecipes() {
 
@@ -8,17 +8,17 @@ export default function WeeksRecipes() {
 
 
 
-<div className="container fluid -md-8">
+<div className="container-fluid -md-8">
       <h1>Recipe</h1>
         <div className="row">
             <div className="col-10">
-            <Recipe/>
+            <RecipePlaceholder/>
             </div>
-            <div className="col-sm">
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
+            <div className="col-md">
+            <CardPlaceholder/>
+            <CardPlaceholder/>
+            <CardPlaceholder/>
+            <CardPlaceholder/>
             </div>
         </div>
 

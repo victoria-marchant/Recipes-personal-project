@@ -41,7 +41,7 @@ exports.seed = (knex) => {
             'Check out this easy Chinese Chicken Congee by Daddy Lau, a Chinese chef with over 50 years of experience. This soup is delicious, easy and great for cold nights',
           image_url: '/images/congee.png',
           ingredients: JSON.stringify([
-            '1 rice cup white rice (a "rice cup" is about 3/4 of a standard US cup. Jasmine rice is preferred but any white rice will work!)',
+            '1 rice cup white rice - a rice cup is about 3/4 of a standard US cup. Jasmine rice is preferred but any white rice will work!',
             '340 g chicken (use any amount you want)',
             '8 cups of water',
             '14.2 g ginger',

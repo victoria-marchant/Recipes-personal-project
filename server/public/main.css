@@ -1,0 +1,57 @@
+body{
+  background-color: rgb(200, 200, 200);
+}
+
+.preview-img{
+  object-fit: cover;
+  width:auto;
+  height: 250px;
+
+}
+.title{
+
+  /* d-flex  */
+/* justify-content:center */
+
+}
+
+.img-responsive {
+  height: auto;
+  width: auto;
+  max-height: 72px;
+  max-width: 250px;
+}
+
+#right
+{
+  /* flex: auto;
+  justify-content: end; */
+    position:absolute;
+    right:10px;
+} 
+
+input {
+  display: block;
+  /* margin: 10px;
+  width: 80%;
+  scroll-behavior: smooth; */
+}
+
+textarea {
+  display: block;
+  margin: 10px;
+  width: 90%;
+  align-items: center;
+}
+
+.method{
+  max-height: 200px;
+}
+
+.ingredients{
+  max-height: 50px;
+}
+
+ul{
+  margin: unset !important;
+}

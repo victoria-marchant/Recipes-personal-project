@@ -249,6 +249,26 @@ exports.seed = (knex) => {
           weeks_dinners: 'false',
           favourited: 'false',
         },
+        {
+          id: '10',
+          title: 'cooking with Bob',
+          servings: 169165,
+          cooking_time: '1min',
+          publisher: 'Group project inc',
+          summary: 'Cooking with Bob, the gift that just keeps on giving',
+          image_url: '/images/What-confused.gif',
+          ingredients: JSON.stringify([
+            `1 million of everything`,
+            `10 million of everythingelse `,
+          ]),
+          method: JSON.stringify([
+            `Don't choose this one`,
+            `It's a bad idea`,
+            `you don't know what's in the box`,
+          ]),
+          weeks_dinners: 'false',
+          favourited: 'false',
+        },
       ])
     })
 }

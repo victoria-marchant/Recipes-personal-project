@@ -33,12 +33,29 @@ router.get('/:id', (req, res) => {
     })
 })
 
+//DELETE /api/vi/recipes/:id
+router.delete('/:id', (req, res) => {
+  const id = Number(req.params.id)
+  db.deleteRecipe(id)
+    .then(() => {
+      res.sendstatus(200)
+    })
+    .catch((err) => {
+      console.error(err)
+      res.status(500).send('server error')
+    })
+})
+
+//get /api/vi/recipes/weeksrecipes
 router.get('/weeksrecipes', (req, res) => {
-  db.allRecipes()
+  db.weeksRecipes()
     .then((recipe) => {
-      recipe.ingredients = JSON.parse(recipe.ingredients)
-      recipe.method = JSON.parse(recipe.method)
-      res.json(recipe)
+      console.log(recipe)
+      // recipe.forEach((recipe) => {
+      //   recipe.ingredients = JSON.parse(recipe.ingredients)
+      //   recipe.method = JSON.parse(recipe.method)
+      // })
+      // res.json(recipe)
     })
     .catch((err) => {
       console.error(err.message)

@@ -6,9 +6,10 @@ const connection = require('knex')(config)
 module.exports = {
   allRecipes,
   singleRecipe,
-  deleteRecipe,
-  weeksRecipes,
-  setItemStatus,
+  // deleteRecipe,
+  // weeksRecipes,
+  // setItemStatus,
+  // searchBooks
 }
 
 function allRecipes(db = connection) {
@@ -46,17 +47,43 @@ function singleRecipe(id, db = connection) {
     .first()
 }
 
-function weeksRecipes(db = connection) {
-  return db('recipes').select().where('weeks_dinners', 'true')
-}
+// function weeksRecipes(db = connection) {
+//   return db('recipes').select().where('weeks_dinners', 'true')
+// }
 
-function setItemStatus(id, status, db = connection) {
-  return db('recipies')
-    .update('weeks_dinners', status)
-    .where('id', id)
-    .then(() => db('recipes').select().where('id', id).first())
-}
+// function setItemStatus(id, status, db = connection) {
+//   return db('recipies')
+//     .update('weeks_dinners', status)
+//     .where('id', id)
+//     .then(() => db('recipes').select().where('id', id).first())
+// }
 
-function deleteRecipe(id, db = connection) {
-  return db('recipes').delete().where('id', id)
-}
+// function deleteRecipe(id, db = connection) {
+//   return db('recipes').delete().where('id', id)
+// }
+
+// function searchBooks (search, db = connection) {
+//   return db('recipes')
+//   .whereLike('title', `%${search}%`)
+//   .orWhereLike("ingredients", `%${search}%`)
+// }
+
+// function favourite(id, db = connection) {
+//   return db('recipes')
+//     .where({ id })
+//     .update({ favourited: 'inactive', user_id: newOwnerId })
+//     .then(() => {
+//       return db('users')
+//         .where('users.id', currentOwnerId)
+//         .increment('trading_tokens', 1)
+//     })}
+
+// function weekRecipe(id, db = connection) {
+//   return db('books')
+//         .where({ id })
+//         .update({ status: 'inactive', user_id: newOwnerId })
+//         .then(() => {
+//           return db('users')
+//             .where('users.id', currentOwnerId)
+//             .increment('trading_tokens', 1)
+//         })}

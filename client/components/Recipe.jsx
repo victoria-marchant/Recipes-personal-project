@@ -21,22 +21,22 @@ export default function Recipe() {
  
  
 
-  function removeRecipe(){
-    deleteRecipe(params.recipeId)
-    .then(() => {
-      // allRecipes()
-      navigate('/')
-      return null
-    })
-    .catch((err) => console.log(err))
-}
+//   function removeRecipe(){
+//     deleteRecipe(params.recipeId)
+//     .then(() => {
+//       // allRecipes()
+//       navigate('/')
+//       return null
+//     })
+//     .catch((err) => console.log(err))
+// }
   
 
 
-  function onClick(e) {
-    e.preventDefault()
-   removeRecipe()
-    }
+  // function onClick(e) {
+  //   e.preventDefault()
+  //  removeRecipe()
+  //   }
   
 
   const method = recipe.method

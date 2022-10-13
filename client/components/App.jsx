@@ -3,8 +3,12 @@ import React from 'react'
 import {Routes, Route } from "react-router-dom"
 // import { getGreeting } from '../apiClient'
 import Cards from './Cards'
+import Nav from './Nav'
 import Recipe from './Recipe'
 import WeeksRecipes from "./WeeksRecipes"
+import AddRecipe from "./AddRecipe"
+import ShoppingList from "./ShoppingList"
+import AlterRecipe from './AlterRecipe'
 
 
 
@@ -15,10 +19,14 @@ const App = () => {
   return (
 
   <>
+<Nav/>
    <Routes>
         <Route path='/' element={<Cards/>} />
+        <Route path='/addrecipe' element={<AddRecipe/>} />
           <Route path='/:recipeId' element={<Recipe/>}/>
+          <Route path= "/:recipeId/adjustments" element={<AlterRecipe/>}/>
           <Route path="/weeksrecipes" element={<WeeksRecipes/>}/>
+          <Route path="/shoppinglist" element={<ShoppingList/>}/>
         </Routes>
  {/* <Cards/> */}
 

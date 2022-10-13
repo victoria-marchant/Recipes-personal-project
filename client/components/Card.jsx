@@ -1,32 +1,29 @@
-import React, { useState, useEffect } from 'react'
-import { allRecipes } from '../apiClient'
+import React, { useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import {Link} from "react-router-dom"
+
+import { fetchRecipes} from "../actions/RecipesActions"
+
 
 
 export default function Card(){
 
+  const dispatch = useDispatch()
 
-  const [recipes, setRecipes] = useState([])
+  const recipes = useSelector(state => state.recipes)
 
+  console.log(recipes)
   useEffect(() => {
-    allRecipes()
-      .then(recipeData => {
-        // console.log("this is recipe data", recipeData)
-        setRecipes(recipeData)
-        return null
-      })
-      .catch(err => {
-        console.log(err)
-      })
+    dispatch(fetchRecipes())
   }, [])
 
  
   return(
     <>
-{recipes.map((recipe) => (
+  {recipes && recipes.map((recipe) => (
   <div key={recipe.id} className='col'>
     <div  className="card h-100">
-    <img src={recipe.imageUrl} className="card-img-top img-fluid" alt="..."/>
+    <img src={recipe.imageUrl} className="card-img-top img-fluid preview-img" alt="..."/>
     <div className="card-body align-bottom d-flex flex-column">
     <h5 className="card-title">{recipe.title}</h5>
     <p className="card-text">{recipe.summary}</p>

@@ -9,6 +9,9 @@ export default function WeeksRecipes() {
 
   const [weekRecipe, setWeekRecipe] = useState([])
  
+  //Global state weeks recipes 
+  //local state is feature (to display main card and the rest small - if feature display, else display small)
+  //click event will change isFeatured 
 
   useEffect(() => {
     allRecipes()

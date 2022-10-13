@@ -2,7 +2,7 @@ import {
   SET_RECIPES,
   // POST_RECIPE,
   // UPDATE_RECIPE,
-  // RETIRE_RECIPE,
+  // DELETE_RECIPE,
 } from '../actions/RecipesActions'
 
 const initialState = []
@@ -13,17 +13,17 @@ const recipesReducer = (state = initialState, action) => {
   switch (type) {
     case SET_RECIPES:
       return payload
-    // case POST_PUPPY:
+    // case POST_RECIPE:
     //   return [...state, payload]
-    // case UPDATE_PUPPY:
-    //   return state.map((puppy) => {
-    //     if (puppy.id === payload.id) {
-    //       return { ...puppy, ...payload }
+    // case UPDATE_RECIPE:
+    //   return state.map((Recipe) => {
+    //     if (Recipe.id === payload.id) {
+    //       return { ...Recipe, ...payload }
     //     }
-    //     return puppy
+    //     return Recipe
     //   })
-    // case RETIRE_PUPPY:
-    //   return state.filter((puppy) => puppy !== payload)
+    // case DELETE_Recipe:
+    //   return state.filter((Recipe) => Recipe !== payload)
     default:
       return state
   }

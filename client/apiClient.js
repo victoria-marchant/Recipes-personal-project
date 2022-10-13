@@ -31,12 +31,12 @@ export function allRecipes() {
 //     .catch(errorHandler('POST', '/v1/posts'))
 //   }
 
-export function deleteRecipe(id) {
-  return request
-    .del(`${recipeUrl} ${id}`)
-    .then((res) => res)
-    .catch(errorHandler('DELETE', '/v1/recipe/:id/'))
-}
+// export function deleteRecipe(id) {
+//   return request
+//     .del(`${recipeUrl} ${id}`)
+//     .then((res) => res)
+//     .catch(errorHandler('DELETE', '/v1/recipe/:id/'))
+// }
 
 function errorHandler(method, route) {
   return (err) => {

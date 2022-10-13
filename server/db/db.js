@@ -62,7 +62,7 @@ function singleRecipe(id, db = connection) {
 //   return db('recipes').delete().where('id', id)
 // }
 
-// function searchBooks (search, db = connection) {
+// function searchRecipes (search, db = connection) {
 //   return db('recipes')
 //   .whereLike('title', `%${search}%`)
 //   .orWhereLike("ingredients", `%${search}%`)
@@ -71,19 +71,9 @@ function singleRecipe(id, db = connection) {
 // function favourite(id, db = connection) {
 //   return db('recipes')
 //     .where({ id })
-//     .update({ favourited: 'inactive', user_id: newOwnerId })
-//     .then(() => {
-//       return db('users')
-//         .where('users.id', currentOwnerId)
-//         .increment('trading_tokens', 1)
-//     })}
+//     .update({ favourited: 'inactive'})
 
 // function weekRecipe(id, db = connection) {
 //   return db('books')
 //         .where({ id })
-//         .update({ status: 'inactive', user_id: newOwnerId })
-//         .then(() => {
-//           return db('users')
-//             .where('users.id', currentOwnerId)
-//             .increment('trading_tokens', 1)
-//         })}
+//         .update({ status: 'active'})

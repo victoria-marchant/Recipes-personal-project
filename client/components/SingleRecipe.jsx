@@ -2,12 +2,15 @@ import React, { useState, useEffect } from "react"
 import {useParams, useNavigate, Link} from "react-router-dom"
 import { allRecipes,deleteRecipe } from '../apiClient'
 import { useSelector, useDispatch } from 'react-redux'
+import RecipeOptions from "./RecipeOptionsMenu"
 
 
 
-export default function Recipe() {
+export default function SingleRecipe() {
   const navigate = useNavigate()
   const params = useParams()
+
+ 
 
 
   // const dispatch = useDispatch()
@@ -19,7 +22,11 @@ export default function Recipe() {
 
     const recipe = recipes.find((item) => params.recipeId == item.id)
  
- 
+    const isWeeksRecipe = recipe.weeksDinners === 'true'
+    const isFavourited = recipe.favourited === "true"
+//  console.log(isWeeksRecipe)
+//  console.log(recipe.weeksDinners)
+//  console.log(typeof(recipe.weeksDinners))
 
 //   function removeRecipe(){
 //     deleteRecipe(params.recipeId)
@@ -45,13 +52,17 @@ export default function Recipe() {
   return (
     <>
 <div className="container">
-<h1 className="text-center mt-3 mb-3 ">{recipe.title}</h1>
+    <h1 className="text-center mt-3 mb-3 ">{recipe.title}   
+    <RecipeOptions weeksMenuStatus = {recipe.weeksDinners} favouriteStatus = {recipe.favourited} id = {recipe.id}/>
+    </h1>
+   
     <div className="row">
         <div className="col-lg-">
         <div className="card">
           <img src={recipe.imageUrl} className="card-img-top" alt="..."/>
         <div className="card-body">
-          <p className="card-text">Publisher: {recipe.publisher}</p>
+          
+          <p className="card-text">Recipe credit: {recipe.publisher}</p>
         </div>
         <div className="border">
           <ul className="list-group list-group-flush">
@@ -63,10 +74,10 @@ export default function Recipe() {
             {method && method.map((method, index) => (
             <p key={index}>{method}</p>
             ))}
-          <a href="/weeksrecipes" className="card-link">Add to this weeks meal plan</a>
-          <a href="#" className="card-link">Add to favourites</a>
-          <a href="#" className="card-link">Delete Recipe</a>
-          <Link className="nav-item nav-link" to={`/${recipe.id}/adjustments/`} >Adjust Recipe</Link>
+ 
+
+          
+          
           
           
         </div>
@@ -77,3 +88,12 @@ export default function Recipe() {
     </>
   )
 }
+
+
+/* /* const isLoggedIn = this.state.isLoggedIn;
+  return (
+    <div>
+      The user is <b>{isLoggedIn ? 'currently' : 'not'}</b> logged in.
+    </div>
+  );
+} */

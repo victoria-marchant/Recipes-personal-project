@@ -5,7 +5,7 @@ import {useLocation, useParams} from "react-router-dom"
 
 
 
-export default function RecipePlaceholder() {
+export default function WeekRecipeMain() {
 const location = useLocation()
   console.log(location)
 

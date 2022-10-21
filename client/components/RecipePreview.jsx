@@ -6,7 +6,7 @@ import { fetchRecipes} from "../actions/RecipesActions"
 
 
 
-export default function Card(){
+export default function RecipePreview(){
 
   const dispatch = useDispatch()
 

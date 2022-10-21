@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react"
-import RecipePlaceholder from "./RecipePlaceholder"
-import CardPlaceholder from "./CardPlaceholder"
-
 import { allRecipes } from "../apiClient"
 import Nav from "./Nav"
 
-export default function WeeksRecipes() {
+import WeekRecipeMain from "./WeekRecipeMain"
+import WeekRecipeSub from "./WeekRecipeSub"
+
+export default function WeeksMenu() {
 
   const [weekRecipe, setWeekRecipe] = useState([])
  
@@ -35,12 +35,12 @@ export default function WeeksRecipes() {
         <div className="row">
             <div className="col-10">
             <h1 className="text-center mt-3 mb-3 ">Recipe name</h1>
-            <RecipePlaceholder/>
+            <WeekRecipeMain/>
             </div>
             <div className="col-md">
             <h1 className="text-center mt-3 mb-3 "></h1>
             {weekRecipe && weekRecipe.map((Recipe, index) => (
-            <CardPlaceholder key={index}/>
+            <WeekRecipeSub key={index}/>
             ))}
            
             </div>
